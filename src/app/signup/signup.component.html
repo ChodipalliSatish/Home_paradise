@@ -1,0 +1,58 @@
+<div class="container">
+   <h3> Sign-up form </h3>
+   <hr>
+<form [formGroup]= "signupForm" (ngSubmit)="onSubmit()">
+   <div class="form-group">
+      <label> Username:    </label>
+      <input type="text" class="form-control" formControlName="username">
+      <div *ngIf="signupForm.controls['username'].hasError('required')" class="alert alert-danger">
+        Please Enter a name
+      </div>
+      <div *ngIf="signupForm.controls['username'].hasError('minlength')" class="alert alert-danger">
+        Please Enter more than 4 characters
+      </div>
+      <div *ngIf="signupForm.controls['username'].hasError('maxlength')" class="alert alert-danger">
+        Please Enter less than 10 characters
+      </div>
+   </div>
+
+    <div class="form-group">
+      <label> Password:    </label>
+      <input type="password" class="form-control" formControlName="password">     
+   </div>
+
+   <div class="form-group">
+      <label> Email:    </label>
+      <input type="email" class="form-control" formControlName="email">
+        <div *ngIf="signupForm.controls['email'].hasError('pattern')" class="alert alert-danger">
+        Please Enter Email
+      </div>
+   </div>
+
+   <div formGroupName="address">
+     <div class="form-group">
+        <label>Street: </label>
+        <input type="text" class="form-control" formControlName="street">
+     </div>
+    
+     <div class="form-group">
+        <label>City: </label>
+        <input type="text" class="form-control" formControlName="city">
+     </div>
+
+     <div class="form-group">
+        <label>postalcode: </label>
+        <input type="text" class="form-control" formControlName="postalcode"> 
+         <!-- <div *ngIf="signupForm.controls['postalcode'].hasError('pattern')" class="alert alert-danger">
+        Please Enter 5 digits
+      </div> -->
+     </div>
+
+   </div>
+
+  <button type="submit" [disabled] class="btn btn-primary"> Submit </button>
+
+  <button type="cancel" class="btn btn-secondary" [routerLink]="['/Signup']">Cancel </button>
+  
+  </form>
+</div>

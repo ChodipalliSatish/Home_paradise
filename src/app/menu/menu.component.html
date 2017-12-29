@@ -1,0 +1,14 @@
+
+<h3> Food paradise - Menu  </h3>
+<hr>
+
+  <div href="#" class="col-md-12" *ngFor="let list of recipes">    
+     
+        <h4 class="list-group-item-heading">{{ list.name }}</h4>
+        <p class="list-group-item-text"> {{ list.description }} </p>
+      
+      <span class="pull-right">
+        <img [src]="list.imagePath" alt="{{ list.name }}" class="img-responsive" style="width:180px; height: 80px">
+      </span>    
+   
+  </div>

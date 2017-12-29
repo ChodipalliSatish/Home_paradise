@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <h3>Our Catering Menu</h3>
+     <hr>
+    <div id="panel-group">
+      <div class="panel panel-default" *ngFor="let item of items; let i = index">
+        <div class="panel-heading" (click) = "current = i">
+          <h5 class="panel-title">
+           <i class='glyphicon' 
+              [class.glyphicon-chevron-right] = "i != current"
+              [class.glyphicon-chevron-down] = "i == current" ></i>   {{item.title}}
+            </h5>
+        </div>
+         <div id="collapse1" class="panel-collapse" [class.collapse]='current != i'>
+          <div class="panel-body">{{item.description}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+.carousel{
+    background: #2f4357;
+    margin-top: 20px;
+}
+.carousel .item{
+    min-height: 60px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+    min-width: 60px;
+}
+.carousel .item img{
+    margin: 0 auto; /* Align slide image horizontally center */
+}
+.bs-example{
+	margin: 20px;
+}
+
+
+
+/* Bottom left text */
+.bottom-left {
+    position: absolute;
+    top: 64px;
+    left: 144px;
+    color: black;    
+    font-family: Sans Regular;
+}
+
